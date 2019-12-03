@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<header>
+ <nav class="menu">
+ <ul>
+<li> <a href="desafio.html"><b>Home</b></a></li>
+ <li><a href="login.html"><b>Login</b></a></li>
+ <li><a href="cadastro.html"><b>Cadastro</b></a></li>
+
+ </ul>
+</nav>
+</header>
+<form>
+
+
+<div class="dados">
+<p>
+ <label for="email">E-mail:</label>
+ <input type="text" autofocus placeholder="Insira seu e-mail " name="email" id="email">
+</p>
+  <label for="senha">Senha:</label>
+ <input type="password" placeholder="Insira sua senha " name="senha" id="senha">
+</p>
+ <p>
+ <input type="checkbox" name="lembrar" id="lembrar">
+  <label for="lembrar">Lembrar Usuário</label>
+   </p>
+             <p class="dados1">
+                  <!-- <span>Esqueceu sua senha?</span> -->
+                  <a class="esqueceuSenha" href="cadastro.html">Esqueceu sua senha?</a>
+
+                  <button type="button" class="entrar" onclick="entrar()">Entrar</button>
+                  <br><br><br>
+                  <a  href="cadastro.html"> Voltar ao início</a>
+                </p>
+            </div>
+        </form>
+
+</body>
+</html>
+
+<script>
+  function entrar(){
+    var = valor_email.value;
+
+    if (valor_email.endsWith == '@bandtec.com.br' || email.endsWith == '@hotmail.com' || email.endsWith == '@gmail.com.br' || 
+    email.endsWith == '@outlook.com.br' || email.endsWith == '@yahoo.com.br'){
+      alert ('Usuário Cadastrado com sucesso!');
+    }else{
+      alert('Insira um domínio válido para o e-mail de usuário!');
+    }
+  }
+</script> 
