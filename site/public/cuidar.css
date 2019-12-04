@@ -1,12 +1,19 @@
+body{
+    margin: 0%;
+}
+
 .sobre{
     border-radius: 34px;
     background-color: goldenrod;
     height: 305px;
    width: 430px;
-    position: absolute;
+    position: relative;
     padding:50px;
     font-synthesis: weight;
     font-size: 25px;
+    margin-left: 10px;
+    
+
 
 }
 .dica2{
@@ -16,7 +23,9 @@
 
  }
  .video{
-     left: 600px;
-     margin-left: 540px;
+     left: 400px;
+     margin-left: 570px;
+     margin-top: 10px; 
+     
 
  } 
