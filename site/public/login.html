@@ -1,74 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
 
-    <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
-<header>
- <nav class="menu">
- <ul>
-<li> <a href="desafio.html"><b>Home</b></a></li>
- <li><a href="login.html"><b>Login</b></a></li>
- <li><a href="cadastro.html"><b>Cadastro</b></a></li>
+  <header>
+    <nav class="menu">
+      <ul>
+        <li> <a href="desafio.html"><b>Home</b></a></li>
+        <li><a href="login.html"><b>Login</b></a></li>
+        <li><a href="cadastro.html"><b>Cadastro</b></a></li>
 
- </ul>
-</nav>
-</header>
-<form>
+      </ul>
+    </nav>
+  </header>
+  <form>
 
 
-<div class="dados">
-<p>
- <label for="email">E-mail:</label>
- <input type="text" autofocus placeholder="Insira seu e-mail " name="email" id="email">
-</p>
-  <label for="senha">Senha:</label>
- <input type="password" placeholder="Insira sua senha " name="senha" id="senha">
-</p>
- <p>
- <input type="checkbox" name="lembrar" id="lembrar">
-  <label for="lembrar">Lembrar Usuário</label>
-   </p>
-             <p class="dados1">
-                  <!-- <span>Esqueceu sua senha?</span> -->
-                  <a class="esqueceuSenha" href="cadastro.html">Esqueceu sua senha?</a>
+    <div class="dados">
+      <form id="form_login" onsubmit="return entrar(event)" method="POST">
+        <p>
+          <label for="email">E-mail:</label>
+          <input type="text" autofocus placeholder="Insira seu e-mail " name="email" id="email">
+        </p>
+        <label for="senha">Senha:</label>
+        <input type="password" placeholder="Insira sua senha " name="senha" id="senha">
+        </p>
+        <p>
+          <input type="checkbox" name="lembrar" id="lembrar">
+          <label for="lembrar">Lembrar Usuário</label>
+        </p>
+        <p class="dados1">
+          <!-- <span>Esqueceu sua senha?</span> -->
+          <a class="esqueceuSenha" href="cadastro.html">Esqueceu sua senha?</a>
 
-                  <button type="button" class="entrar" onclick="entrar()">Entrar</button>
-                  <br><br><br>
-                  <a  href="cadastro.html"> Voltar ao início</a>
-                </p>
-            </div>
-        </form>
+          <button type="button" class="entrar" onclick="entrar()">Entrar</button>
+          <br><br><br>
+          <a href="cadastro.html"> Voltar ao início</a>
+        </p>
+    </div>
+  </form>
+  </form>
 
-        <footer class="footer">
-          <p class="footer2">
-               <b class="agradecimentos"> Obrigado Por Entrar Em Nosso Site </b><br>
-                 <b class="nome2">
-                         Evelyn Santos <br><br>
-                         Contato:(11)949378460<br>
-          </b>
-                 <b class="clique">Clique e Conheça</b>
-                </p>
-               <a target="_blank" href="https://www.google.com/maps/search/mapa+da+paulista/@-23.5553512,-46.6594425,15z"><img class="imagemlocalizaçao" src="localizaçao.png" ></a>
-        </footer>
+  <footer class="footer">
+    <p class="footer2">
+      <b class="agradecimentos"> Obrigado Por Entrar Em Nosso Site </b><br>
+      <b class="nome2">
+        Evelyn Santos <br><br>
+        Contato:(11)949378460<br>
+      </b>
+      <b class="clique">Clique e Conheça</b>
+    </p>
+    <a target="_blank" href="https://www.google.com/maps/search/mapa+da+paulista/@-23.5553512,-46.6594425,15z"><img
+        class="imagemlocalizaçao" src="localizaçao.png"></a>
+  </footer>
 
 </body>
+
 </html>
 
 <script>
-  function entrar(){
-     valor_email = (email.value);
+  
+  function entrar() {
+    var formulario = new URLSearchParams(new FormData(form_login));
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      body: formulario
+    }).then(function (response) {
 
-    if (valor_email.endsWith ('@bandtec.com.br') || valor_email.endsWith ('@hotmail.com') || valor_email.endsWith  ('@gmail.com.br')|| 
-    valor_email.endsWith ('@outlook.com.br') || valor_email.endsWith ('@yahoo.com.br'){
-      alert ('Usuário Cadastrado com sucesso!');
-    }else{
-      alert('Insira um domínio válido para o e-mail de usuário!');
-    }
+      if (response.ok) {
+
+        window.location.href ='cuidar.html';
+
+      } else {
+
+        alert('Erro de cadastro!');
+        response.text().then(function (resposta) {
+
+        });
+
+      }
+    });
+
+    return false;
   }
-</script> 
+
+</script>
