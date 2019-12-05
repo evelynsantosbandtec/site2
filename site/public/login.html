@@ -14,7 +14,7 @@
   <header>
     <nav class="menu">
       <ul>
-        <li> <a href="desafio.html"><b>Home</b></a></li>
+        <li> <a href="index.html"><b>Home</b></a></li>
         <li><a href="login.html"><b>Login</b></a></li>
         <li><a href="cadastro.html"><b>Cadastro</b></a></li>
 
@@ -56,18 +56,18 @@
         Evelyn Santos <br><br>
         Contato:(11)949378460<br>
       </b>
-      <b class="clique">Clique e Conheça</b>
     </p>
-    <a target="_blank" href="https://www.google.com/maps/search/mapa+da+paulista/@-23.5553512,-46.6594425,15z"><img
-        class="imagemlocalizaçao" src="localizaçao.png"></a>
-  </footer>
+    <iframe class="imagemlocalizaçao" src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d14629.
+    457749789322!2d-46.6594425!3d-23.5553512!3m2!1i1024!2i768!4f13.1!2m1!1smapa%20da%20paulista!5e0!3m2!1
+    spt-PT!2sbr!4v1575504544001!5m2!1spt-PT!2sbr" 
+    width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 
 </body>
 
 </html>
 
 <script>
-  
+
   function entrar() {
     var formulario = new URLSearchParams(new FormData(form_login));
     fetch("/usuarios/autenticar", {
@@ -77,7 +77,7 @@
 
       if (response.ok) {
 
-        window.location.href ='cuidar.html';
+        window.location.href = 'cuidar.html';
 
       } else {
 

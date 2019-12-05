@@ -14,7 +14,7 @@
      <header>
           <nav class="menu2">
                <ul>
-                    <li><a href="desafio.html"><b>Home</b></a></li>
+                    <li><a href="index.html"><b>Home</b></a></li>
                     <li><a href="login.html"><b>Login</b></a></li>
                     <li><a href="cadastro.html"><b>Cadastro</b></a></li>
                </ul>
@@ -25,11 +25,9 @@
           <div class="cadastro">
                <h2> Cadastre sua florecultura</h2>
                <form id="form_cadastro" onsubmit="return validar()" method="post">
-                    <em>Nome da florecultura</em> <br></rb><input type="text" name="nome" id="nome"
-                         placeholder="Nome"><br>
+                    <em>Nome da florecultura</em> <br></rb><input type="text" name="nome" id="nome" placeholder="Nome"><br>
                     <br>
-                    <em>Endereço</em><br> <input type="text" name="endereco" id="endereco"
-                         placeholder="Endereço"><br><br>
+                    <em>Endereço</em><br> <input type="text" name="endereco" id="endereco" placeholder="Endereço"><br><br>
                     <em>numero</em><br><input type="text" name="numero" id="numero" placeholder="Numero"><br><br>
                     <em>contato</em><br><input type="text" name="contato" id="contato" placeholder="contato"><br><br>
                     <em>Email</em><br><input type="text" name="email" id="email" placeholder="Email"><br><br>
@@ -48,18 +46,19 @@
                <b class="nome2"> Evelyn Santos<br><br>
                     Contato:(11)949378460<br>
                </b>
-               <b class="clique">Clique e Conheça</b>
+               
           </p>
-          <a target="_blank"
-               href="https://www.google.com/maps/search/mapa+da+paulista/@-23.5553512,-46.6594425,15z"><img
-                    class="imagemlocalizaçao" src="localizaçao.png"></a>
+          <iframe class="imagemlocalizaçao" src="https://www.google.com/maps/embed?pb=!1m12!1m8!1
+          m3!1d14629.457749789322!2d-46.6594425!3d-23.5553512!3m2!1i1024!2i768!4f13.1!2m1!1smapa%20d
+          a%20paulista!5e0!3m2!1spt-PT!2sbr!4v1575504544001!5m2!1spt-PT!2sbr"
+               width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
      </footer>
      <script>
           function validar() {
-               // event.prevenDefault()
-               // // if (nome.value == "" || endereco.value == "" || numero.value == "" || contato.value == "" || email.value == "" || senha.value == "" || senha.indexOf(4)) {
-               // //      alert(`Insira os dados Corretamente !`);
-               // // }
+               
+                if (nome.value == "" || endereco.value == "" || numero.value == "" || contato.value == "" || email.value == "" || senha.value == "" || senha.indexOf(4)) {
+                   alert(`Insira os dados Corretamente !`);
+                }
                var formulario = new URLSearchParams(new FormData(form_cadastro));
                fetch("/usuarios/cadastrar", {
                     method: "POST",
