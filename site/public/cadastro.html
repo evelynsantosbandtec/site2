@@ -24,7 +24,7 @@
 
           <div class="cadastro">
                <h2> Cadastre sua florecultura</h2>
-               <form id="form_cadastro" onsubmit="return validar()" method="post">
+               <form id="form_cadastro" onsubmit="return validar(event)" method="post">
                     <em>Nome da florecultura</em> <br></rb><input type="text" name="nome" id="nome" placeholder="Nome"><br>
                     <br>
                     <em>Endereço</em><br> <input type="text" name="endereco" id="endereco" placeholder="Endereço"><br><br>
@@ -32,7 +32,7 @@
                     <em>contato</em><br><input type="text" name="contato" id="contato" placeholder="contato"><br><br>
                     <em>Email</em><br><input type="text" name="email" id="email" placeholder="Email"><br><br>
                     <em> Senha</em><br><input type="password" name="senha" id="senha" placeholder="Senha"><br><br>
-                    <button class="btn" name="" value="Cadastre !">Cadastrar</button></br>
+                    <button class="btn" type="submit" value="Cadastre !">Cadastrar</button></br>
 
 
                </form>
@@ -44,19 +44,34 @@
           <p class="footer2">
                <b class="agradecimentos"> Obrigado Por Entrar Em Nosso Site </b><br>
                <b class="nome2"> Evelyn Santos<br><br>
-                    Contato:(11)949378460<br>
+                    Contato:(11)949378460<br><br>
+                    Evelyn.santos@bandtec.com.br<br><br>
                </b>
-               
           </p>
+          <div class="redes_sociais">
+                    <a target="_blank" href="https://www.facebook.com/profile.php?id=100011966983312">
+                      <img class="imagemfacebook" src="logfacebook.png">
+                    </a>
+          
+                    <a target="_blank" href="https://www.instagram.com/eve17santos/?hl=pt-br">
+                      <img class="imageminsta" src="loginst.png">
+                    </a>
+          
+                    <a target="_blank" href="https://www.linkedin.com/in/evelyn-rocha-4bb10b196/">
+                      <img class="imagemlinkedin" src="loglinke.png">
+                    </a>
+               </div>\
+
           <iframe class="imagemlocalizaçao" src="https://www.google.com/maps/embed?pb=!1m12!1m8!1
           m3!1d14629.457749789322!2d-46.6594425!3d-23.5553512!3m2!1i1024!2i768!4f13.1!2m1!1smapa%20d
           a%20paulista!5e0!3m2!1spt-PT!2sbr!4v1575504544001!5m2!1spt-PT!2sbr"
                width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+         
      </footer>
      <script>
-          function validar() {
-               
-                if (nome.value == "" || endereco.value == "" || numero.value == "" || contato.value == "" || email.value == "" || senha.value == "" || senha.indexOf(4)) {
+          function validar(event) {
+               event.preventDefault()
+                if (nome.value == "" || endereco.value == "" || numero.value == "" || contato.value == "" || email.value == "" || senha.value == "" || senha.value <= 4) {
                    alert(`Insira os dados Corretamente !`);
                 }
                var formulario = new URLSearchParams(new FormData(form_cadastro));

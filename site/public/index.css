@@ -1,16 +1,12 @@
-body {  
-    margin: 0;
-    padding: 0;
-    width: 100VW;
-    background-image:url(fundo.png);
-    /* background-repeat: no-repeat; */
+*
+{
+  margin: 0;
+  padding: 0;
 }
 
 html{
   margin: 0;
   padding: 0;
-  width: 100vw;
-
 }
 a{
   text-decoration: none;
@@ -25,13 +21,11 @@ a{
    width: 100%;
    top: 0%;
    border-radius:30px;
-
-
 }
 
 .menu{
    height: 60px;
-   position: absolute;
+   position: relative;
    top : 0;
    width: 100%;
    font-family: 'Courier New', Courier, monospace;
@@ -41,7 +35,7 @@ a{
 header{
    background-color: darkgoldenrod;
    height: 60px;
-   position: absolute;
+   position: relative;
    top: 0;
    width: 100vw;
 }
@@ -53,7 +47,7 @@ header nav ul li a:hover{
 
   .botao{
       float: left;
-      margin-left: 47vw;
+      margin-left: 47%;
       margin-top: 50px;
       height: 40px;
       width: 100px;
@@ -93,13 +87,19 @@ ul{
    line-height: 50px;
 }
 
+#corpo
+{
+  background-image:url(fundo.png);
+  background-position: left top;
+}
+
 
 .sobre{
    border-radius: 34px;
   
    height: 305px;
   width: 430px;
-   position: absolute;
+   position: relative;
    padding:50px;
    font-synthesis: weight;
    font-size: 25px;
@@ -108,7 +108,7 @@ ul{
 
 .dica2{
   left: 600px;
-  position: absolute;                                                                                        
+  position: relative;                                                                                        
   font-family: Arial, Helvetica, sans-serif;
 
 }
@@ -117,7 +117,7 @@ ul{
 }
 .primeira_imagem{
    float: left;
-   position: absolute;
+   position: relative;
    margin-left: 600px;
    margin-top:  150px;  
 }
@@ -138,53 +138,84 @@ ul{
       font-size: 20px;
 
   }
-  footer{
-     
+
+  #espaco
+  {
+    height: 400px;
+  }
+
+  .rodape{
       width: 100%;
-      height: 330px;
+      margin-bottom: 0;
+      margin-top: 0;
       background-color:black;
       border-top: solid 3px #050607;
-      position: absolute;
-      bottom: 0;
-      top: 400px;
+      height: 500px;
       }
+
 .footer2{
   color: blanchedalmond;
-}
-.agradecimentos{
-  font-size: 30px;
-  margin-left: 450px;
-  color: darkgoldenrod;
-  top: 100px;
-
-}
-.imagemlocalizaçao{
-  width: 320px;
-  height: 140px;
-  margin-left: 980px;
-  position: relative;
-  bottom: 190px;
-  
-
-}
-.clique{
-  margin-left: 890px;
-  font-size: 20px;
-}
-.nome2{
-  font-size: 30px;
-  margin-left: 50px;
-}
-.imagemfacebook{
-  width: 50px;
-  margin-left: 35px;
-   margin-top: 60px;
-}
-.imageminsta{
-  width: 50px;
   margin-left: 40px;
 }
-  .imagemfundo{
-    width: 400px;
-    margin-left: 10px;
-  }
+.footer3{
+  font-size: 40px;
+  margin-left: 30px;
+  margin-top: 30px;
+  color: darkgoldenrod;
+}
+
+.agradecimentos{
+  font-size: 40px;
+  margin-left: 400px;
+  color: darkgoldenrod;
+  top: 500px;
+
+}
+
+.imagemlocalizaçao{
+  position: absolute;
+ height: 200px;
+ width: 400px;
+ margin-left: 400px;
+ margin-top: -80px;
+ 
+}
+.clique{
+  margin-left: 700px;
+  font-size: 20px;
+ color: darkgoldenrod;
+ font-size: 30px;
+}
+
+.nome2{
+  font-size: 25px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.imagemfacebook{
+  float: left;
+  width: 50px;
+  margin-left: 10px;
+   margin-top: 40px;
+}
+
+.imageminsta{
+  float: left;
+  width: 55px;
+  margin-left: 10px;
+  margin-top: 40px;
+}
+.imagemlinkedin{
+  float: left;
+  width: 70px;
+  margin-left: 10px;
+  margin-top: 30px;
+   
+}
+.redes_sociais{
+  float: left;
+  width: 440px;
+  margin-left: 30px;
+}
+

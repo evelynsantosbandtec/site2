@@ -114,7 +114,7 @@ input{
        footer{
         float: left;
         width:100%; 
-        height: 340px;
+        height: 450px;
         background-color:black;
         border-top: solid 3px #050607;
         margin-top:660px;
@@ -122,23 +122,57 @@ input{
   .footer2{
     color: blanchedalmond;
   }
+  .footer3{
+    font-size: 40px;
+    margin-left: 30px;
+    margin-top: 20px;
+    color: darkgoldenrod;
+  }
   .agradecimentos{
-    font-size: 30px;
+    font-size: 40px;
     margin-left: 450px;
     color: darkgoldenrod;
     top: 100px;
   
   }
   .imagemlocalizaçao{
-    width: 330px;
-    height: 140px;
-    margin-left: 980px;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    margin-left: 800px;
+    margin-top: -80px;
   }
   .clique{
     margin-left: 990px;
     font-size: 20px;
   }
   .nome2{
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 50px;
+    margin-top: 50px;
+    color: floralwhite;
   }
+  .imagemfacebook{
+    float: left;
+    width: 50px;
+    margin-left: 20px;
+     margin-top: 40px;
+  }
+  
+  .imageminsta{
+    float: none;
+    width: 50px;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  .imagemlinkedin{
+    float: left;
+    width: 70px;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+  .redes_sociais{
+    float: left;
+    width: 440px;
+    margin-left: 30px;
+}

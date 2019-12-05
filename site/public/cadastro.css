@@ -13,7 +13,7 @@ body{
 .cadastro {
     border-style:outset;
     border-radius: 40px;
-    height: 600px;
+    height: 500px;
     width: 400px;
     border-color: black;
     margin-top: 100px;
@@ -80,7 +80,7 @@ input {
  .footer{
     background-color: black;
     width: 100%;
-    height: 340px;
+    height: 400px;
     margin-top: 900px;
     position: absolute;
 }
@@ -95,15 +95,42 @@ input {
 
 }
 .imagemlocalizaçao{
-    height: 140px;
-    width: 330px;
-    margin-left: 980px;
+    position: absolute;
+   height: 200px;
+   width: 400px;
+   margin-left: 400px;
+   margin-top: -80px;
+   
 }
 .clique{
     margin-left: 990px;
     font-size: 20px;
 }
 .nome2{
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 50px;
   }
+  .imagemfacebook{
+    float: left;
+    width: 50px;
+    margin-left: 20px;
+    margin-top: 40px;
+  }
+  
+  .imageminsta{
+    float: left;
+    width: 50px;
+    margin-left: 10px;
+    margin-top: 40px;
+  }
+  .imagemlinkedin{
+    float: left;
+    width: 70px;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+.redes_sociais{
+    float: left;
+    width: 440px;
+    margin-left: 30px;
+}
