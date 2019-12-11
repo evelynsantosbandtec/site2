@@ -21,11 +21,7 @@
       </ul>
     </nav>
   </header>
-  <form>
-
-
-    <div class="dados">
-      <form id="form_login" onsubmit="return entrar(event)" method="POST">
+      <form class="dados" id="form_login" method="post" onsubmit="return entrar()"> 
         <p>
           <label for="email">E-mail:</label>
           <input type="text" autofocus placeholder="Insira seu e-mail " name="email" id="email">
@@ -41,12 +37,11 @@
           <!-- <span>Esqueceu sua senha?</span> -->
           <a class="esqueceuSenha" href="cadastro.html">Esqueceu sua senha?</a>
 
-          <button type="button" class="entrar" onclick="entrar()">Entrar</button>
+          <button type="submit" id="btn_entrar" class="entrar">Entrar</button>
           <br><br><br>
           <a href="cadastro.html"> Voltar ao início</a>
         </p>
-    </div>
-  </form>
+  
   </form>
 
   <footer class="footer">
@@ -72,6 +67,9 @@
           <img class="imagemlinkedin" src="loglinke.png">
         </a>
       </div>
+      <div class="clique">
+        <b> Onde Estamos </b>
+      </div>
    
     <iframe class="imagemlocalizaçao" src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d14629.
     457749789322!2d-46.6594425!3d-23.5553512!3m2!1i1024!2i768!4f13.1!2m1!1smapa%20da%20paulista!5e0!3m2!1
@@ -85,27 +83,36 @@
 <script>
 
   function entrar() {
-    var formulario = new URLSearchParams(new FormData(form_login));
-    fetch("/usuarios/autenticar", {
+
+    console.log("ENTREI");
+
+  var formulario = new URLSearchParams(new FormData(form_login));
+  fetch("/usuarios/autenticar", {
       method: "POST",
       body: formulario
-    }).then(function (response) {
+  }).then(resposta => {
+      
+    console.log("OALR", resposta);
 
-      if (response.ok) {
+      if (resposta.ok) {
 
-        window.location.href = 'cuidar.html';
+          resposta.json().then(json => {
+
+              sessionStorage.login_usuario_meuapp = json.login;
+              sessionStorage.nome_usuario_meuapp = json.nome;
+              window.location.href = "./index.html";
+          });
 
       } else {
 
-        alert('Erro de cadastro!');
-        response.text().then(function (resposta) {
+          console.log('Erro de login!');
 
-        });
-
+          response.text().then(texto => {
+              console.error(texto);
+          });
       }
-    });
+  });
 
-    return false;
-  }
-
+  return false;
+}
 </script>

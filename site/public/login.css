@@ -138,7 +138,7 @@ input{
   .imagemlocalizaçao{
     position: absolute;
     width: 400px;
-    height: 200px;
+    height: 170px;
     margin-left: 400px;
     margin-top: -80px;
   }
@@ -175,4 +175,10 @@ input{
     float: left;
     width: 440px;
     margin-left: 30px;
+}
+.clique{
+  margin-left: 650px;
+  font-size: 20px;
+ color: darkgoldenrod;
+ font-size: 30px;
 }
